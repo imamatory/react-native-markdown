@@ -91,7 +91,7 @@ var styles = {
   },
   listItemText: {
     flex: 1,
-    
+
   },
   listItemBullet: {
     fontSize: 20,
@@ -228,7 +228,6 @@ var Markdown = React.createClass({
     return !_.isEqual(nextProps.children, this.props.children);
   },
   render: function() {
-
     var child = _.isArray(this.props.children)
       ? this.props.children.join('') : this.props.children;
     var tree = this.parse(child);
