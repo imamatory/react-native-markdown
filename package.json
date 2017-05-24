@@ -9,8 +9,9 @@
   "main": "Markdown.js",
   "author": "Lochlan Wansbrough <lochie@live.com> (http://lwansbrough.com) edited by andangrd",
   "dependencies": {
-    "lodash": "^4.12.0",
-    "react-native-lightbox": "^0.6.0",
+    "lodash": ">=4.12.0",
+    "react": ">=15.5.0",
+    "react-prop-types": "*",
     "simple-markdown-custom": "git://github.com/andangrd/simple-markdown.git"
   },
   "keywords": [
