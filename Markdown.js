@@ -1,10 +1,10 @@
-import React, {
-  PropTypes,
-} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   View,
   Dimensions,
+  TouchableOpacity,
 } from 'react-native';
 
 import _ from 'lodash';
@@ -92,7 +92,7 @@ var styles = {
   },
   listItemText: {
     flex: 1,
-    
+
   },
   listItemBullet: {
     fontSize: 20,
@@ -229,11 +229,19 @@ var Markdown = React.createClass({
     return !_.isEqual(nextProps.children, this.props.children);
   },
   render: function() {
-
     var child = _.isArray(this.props.children)
       ? this.props.children.join('') : this.props.children;
     var tree = this.parse(child);
-    return <View style={[styles.view, this.props.styles.view]}>{this.renderer(tree)}</View>;
+    var Wrapper = this.props.onPress ? TouchableOpacity : View;
+
+    return (
+      <Wrapper
+        onPress={this.props.onPress}
+        style={[styles.view, this.props.styles.view]}
+      >
+        {this.renderer(tree)}
+      </Wrapper>
+    );
   },
 });
 
